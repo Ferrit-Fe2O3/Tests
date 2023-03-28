@@ -18,6 +18,7 @@ public class PersistenceMapTest {
     System.out.println(persistentMap.containsKey("third_key")); // false
     System.out.println(persistentMap.getKeys()); // Выводим все ключи
     System.out.println(persistentMap.get("first_key")); // Выводим значение первого ключа
+    System.out.println(persistentMap.get("third_key")); // Пытаемся вывести значение ключа которого нет
     persistentMap.clear(); // Очищаем мапу
     System.out.println(persistentMap.getKeys()); // Смотрим результат
   }

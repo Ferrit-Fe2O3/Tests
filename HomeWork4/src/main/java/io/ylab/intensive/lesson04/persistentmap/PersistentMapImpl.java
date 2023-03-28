@@ -66,8 +66,10 @@ public class PersistentMapImpl implements PersistentMap {
       statement.setString(1, name);
       statement.setString(2, key);
       try (ResultSet resultSet = statement.executeQuery()) {
-        resultSet.next();
-        return  resultSet.getString("value");
+        if (resultSet.next()) {
+          return  resultSet.getString("value");
+        }
+        return null;
       }
     }
   }
